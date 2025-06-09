@@ -9,7 +9,10 @@
    --shadow-light: rgba(0, 0, 0, 0.1);
    --shadow-button: rgba(0, 0, 0, 0.2);
 }
-
+a {
+    color: inherit;
+    text-decoration: none;
+ }
 body {
    font-family: 'Poppins', Arial, sans-serif;
    background-color: var(--bg-light-grey);
