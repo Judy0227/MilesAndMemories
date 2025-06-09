@@ -14,7 +14,81 @@
 
 </head>
 <body>
-    
+    <header>
+        <a href="/homescreen/homescreen.html" class="back-button">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <h2>NEW ENTRY</h2>
+        <div></div>
+    </header>
+    <main>
+        <form>
+            <label for="title">Title
+                <input type="text" id="title" placeholder="SUNSETS AND SOUVENIRS IN SATORINI" class="title">
+            </label>
+            <label for="story">
+                <textarea placeholder="Your Story?" id="story" class="story"></textarea>
+            </label>
+            <div class="input-container">
+                <div class="input-item">
+                    <img src="/images/album icon.png" alt="Album Icon" class="album-icon">
+                <p>Photos/Videos</p>
+                </div>
+            <label for="file-input" class="file-label">
+            <input type="file" id="file-input" class="file-input">
+                </label>
+            </div>
+            <div class="input-container">
+                <div class="input-item">
+                    <img src="/images/tag icon.png" alt="Vector Icon" class="vector-icon">
+                <p>Tag People</p>
+                </div>
+                <label for="file-input" class="file-label">
+            <input type="file" id="file-input" class="file-input">
+                </label>
+            </div>
+            <div class="input-container">
+                <div class="input-item"> 
+                     <img src="/images/location icon.png" alt="Location Icon" class="location-icon">
+                <p>Add Location</p>
+                </div>
+                 <label for="file-input" class="file-label">
+            <input type="file" id="file-input" class="file-input">
+            </div>
+            <button class="publish-btn">Publish</button>
+        </form>
+        <section class="journal-section">
+            <h2>RECENT JOURNAL</h2>
+            <div class="journal-container">
+                <figure>
+                    <img src="/images/tt1.jpg" alt="Journal Image" class="journal-image">
+                    <figcaption>Sailing Through Stillness</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/dubi.jpg" alt="Journal Image" class="journal-image">
+                    <figcaption>Golden Lights of Dubai</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/mecca.jpg" alt="Journal Image" class="journal-image">
+                    <figcaption>Journey of the Heart</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-item">
+            <i class="fa fa-home"></i>
+            <p><a href="/homescreen/homescreen.html">HOME</a></p>
+        </div>
+        <div class="footer-item">
+            <i class="fa fa-suitcase"></i>
+            <p><a href="/pricing/pricing.html">TRIPS</a></p>
+        </div>
+        <div class="footer-item">
+            <i class="fa fa-plus-circle"></i>
+            <p><a href="/newEntry/newentry.html">NEW ENTRY</a></p>
+        </div>
+    </footer>
     <script src="newentry.js"></script>
 </body>
 </html>
