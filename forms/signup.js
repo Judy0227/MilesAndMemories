@@ -19,4 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
      });
    });
  });
- 
+ const submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    const firstName = document.getElementById('firstName').value;
+ const lastName = document.getElementById('lastName').value;
+    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('lastName', lastName);
+    window.location.href = '/homescreen/homescreen.html';
+})
