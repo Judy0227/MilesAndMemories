@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="/styles/signup.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="form-container">
+    <form id="signupForm">
+      <h2 class="form-title">Sign Up</h2>
+
+      <div class="input-group">
+        <label for="firstName">Enter First Name</label>
+        <input type="text" id="firstName" placeholder="John" required />
+      </div>
+
+      <div class="input-group">
+        <label for="lastName">Enter Last Name</label>
+        <input type="text" id="lastName" placeholder="Emmanuel" required />
+      </div>
+
+      <div class="input-group">
+        <label for="email">Enter Email</label>
+        <input type="email" id="email" placeholder="EmmanuelJblog@gmail.com" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Enter Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="password" placeholder="********" required/>
+          <span class="toggle-password" data-target="password">
+            <i class="fas fa-eye-slash"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-input-wrapper">
+          <input type="password" id="confirmPassword" placeholder="********" required/>
+          <span class="toggle-password" data-target="confirmPassword">
+            <i class="fas fa-eye-slash"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms" required />
+        <label for="terms">Agree with the Terms and Conditions</label>
+      </div>
+
+      <div class="already-account">
+        Already have an Account? <a href="login.html" class="login-link">Log In</a>
+      </div>
+
+      <button type="submit" class="signup-button" id="submit"><a href="\forms\loginForm.html">Sign Up</a></button>
+
+      <div class="or-separator"><span>or</span></div>
+
+      <div class="social-buttons">
+        <button type="button" class="social-btn google">
+          <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google icon"/>
+        </button>
+        <button type="button" class="social-btn apple">
+          <img src="https://img.icons8.com/ios-filled/50/000000/mac-os.png" alt="Apple icon"/>
+        </button>
+        <button type="button" class="social-btn facebook">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook icon"/>
+        </button>
+      </div>
+    </form>
+  </div>
+    <script src="/scripts/signup.js"></script>
+</body>
+</html>
