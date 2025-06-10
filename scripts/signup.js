@@ -27,5 +27,5 @@ submitButton.addEventListener('click', function(e) {
  const lastName = document.getElementById('lastName').value;
     localStorage.setItem('firstName', firstName);
     localStorage.setItem('lastName', lastName);
-    window.location.href = '/html/homescreen.html';
+    window.location.href = '/homescreen.html';
 })
