@@ -104,6 +104,8 @@ main {
     background-color: var(--white);
     padding: 2rem 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .scroller-img {
@@ -125,7 +127,9 @@ main {
     margin-top: 1rem;
     align-items: center;
 }
-
+.dot-container {
+    align-self: center;
+}
 .skip {
     text-decoration: none;
     color: var(--black);
