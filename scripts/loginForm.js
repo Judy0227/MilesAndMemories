@@ -23,7 +23,7 @@ submitButton.addEventListener('click', function(e) {
     if (email && password) {
         localStorage.setItem('email', email);
         localStorage.setItem('password', password);
-        window.location.href = '/html/homescreen.html';
+        window.location.href = '/homescreen.html';
     } else {
         alert('Please fill in all fields.');
     }
