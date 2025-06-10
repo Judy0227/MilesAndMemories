@@ -51,7 +51,7 @@ function nextProfile() {
         dots[index].classList.add('active');
 } 
 else if (pages.next().done) {
-    window.location.href = "/html/loginForm.html";
+    window.location.href = "/loginForm.html";
     }
 }
 
