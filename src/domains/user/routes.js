@@ -5,15 +5,18 @@ const { createNewUser } = require("./controller");
 // Sign up
 router.post("/signup", async (req, res) => {
     try {
-        let { fullname, email, password } = req.body;
-        fullname = fullname.trim();
+        let { firstName, lastName, email, password } = req.body;
+        firstName = firstName.trim();
+        lastName = lastName.trim();
         email = email.trim();
         password = password.trim();
 
         // some validations
-        if (!(fullname && email && password)) {
+        if (!(firstName && lastName && email && password)) {
             throw Error("Empty input fields");
-        } else if (!/^[a-zA-Z ]*$/.test(fullname)) {
+        } else if (!/^[a-zA-Z ]*$/.test(firstName)) {
+            throw Error("Invalid name entered");
+        } else if (!/^[a-zA-Z ]*$/.test(lastName)) {
             throw Error("Invalid name entered");
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             throw Error ("Invalid email entered")
@@ -22,7 +25,7 @@ router.post("/signup", async (req, res) => {
         }else {
             // good credentials? create user
             const newUser = await createNewUser({
-                fullname, email, password
+                firstName, lastName, email, password
             });
             res.status(200).json(newUser);
         }
