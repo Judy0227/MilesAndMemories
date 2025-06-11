@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "d596b15f-e821-4a4e-86de-c691642143b9",
+		"name": "capstone-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44798869"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/v1/user/signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"Ajiboye Adeoye\",\r\n    \"email\":\"adeoye@yahoo.com\",\r\n    \"password\":\"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/v1/user/signup",
+				"description": "api/v1/user/signup verified through postman.\r\nSign up auth done."
+			},
+			"response": []
+		}
+	]
+}

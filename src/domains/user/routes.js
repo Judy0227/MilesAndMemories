@@ -3,7 +3,7 @@ const router = express.Router();
 const { createNewUser } = require("./controller");
 
 // Sign up
-router.post("/signup", async () => {
+router.post("/signup", async (req, res) => {
     try {
         let { fullname, email, password } = req.body;
         fullname = fullname.trim();
@@ -24,7 +24,7 @@ router.post("/signup", async () => {
             const newUser = await createNewUser({
                 fullname, email, password
             });
-            resizeBy.status(200).json(newUser);
+            res.status(200).json(newUser);
         }
     }catch (error) {
         res.status(400).send(error.message);
