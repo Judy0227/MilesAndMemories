@@ -7,7 +7,7 @@ const authenticateUser = async (data) => {
     try {
         const { email, password } = data;
 
-        const fetchedUser = await User.findOne({email});
+        const fetchedUser = await User.findOne({email}).select('+password');
 
         if (!fetchedUser) {
             throw Error("Invalid credentials entered!");
