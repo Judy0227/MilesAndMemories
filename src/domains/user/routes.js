@@ -1,6 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { createNewUser, authenticateUser } = require("./controller");
+const auth = require("./../../middleware/auth");
+
+// protected route
+router.get("/private_data", auth, (req, res) => {
+    res.status(200).send(`You are in the private teritory of ${req.currentUser.email}`);
+});
 
 // signin
 router.post("/", async (req, res) => {
