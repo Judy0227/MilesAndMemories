@@ -24,14 +24,14 @@
                 <div class="login-header">
                     <h1>Log In</h1>
                 </div>
+                <div class="show-msg" id="signup-msg"></div>
                 <div class="login-form-box">
-                    <form action="#" method="POST">
+                    <form method="POST" id="loginForm">
                         <div class="input-group">
                             <label for="email">Enter your Email</label>
-                            <input type="email" id="email" name="email" placeholder="" required>
+                            <input type="email" id="email" name="email" required>
+                            <span id="emailError" class="error-msg"></span>
                         </div>
-        
-                        
         
                         <div class="input-group">
                             <label for="password">Enter Password</label>
@@ -41,6 +41,7 @@
                                     <i class="fas fa-eye-slash"></i> <!-- Initial icon: eye-slash (hidden) -->
                                 </span>
                             </div>
+                            <span id="passwordError" class="error-msg"></span>
                         </div>
         
                         <div class="forgot-password">
@@ -48,14 +49,16 @@
                         </div>
         
                         <div class="account-question">
-                            <p>Don't have an Account? <a href="/signup.html" class="signup-link">Sign Up</a></p>
+                            <p>Don't have an Account? <a href="signup.html" class="signup-link">Sign Up</a></p>
                         </div>
         
-                        <button type="submit" class="login-button" id="submit"><a href="/homescreen.html">Log In</a></button>
+                        <button type="submit" class="login-button" id="submit">Log In</button>
                     </form>
                 </div>
             </div>
-        
+
+   
+    <script src="/scripts/auth.js" type="module"></script>  
     <script src="/scripts/loginForm.js"></script>
 </body>
 </html>
