@@ -13,17 +13,17 @@ const data = [
     {
         title: "Capture Your Travel Memories",
         description: "Save your favorite travel moments with photos and stories all in one place.",
-        image: "images/scrollerImg1.png"
+        image: "/images/scrollerimg1.png"
     },
     {
         title: "Tell Your Story Your Way",
         description: "Write freely, add photos, voice notes, and design each entry to reflect your journey.",
-        image: "images/scrollerImg2.png"
+        image: "images/scrollerimg2.png"
     },
     {
         title: "Join a Community of Explorers",
         description: "Discover journals from fellow travelers and get inspired by their adventures.",
-        image: "images/scrollerImg3.png"
+        image: "images/scrollerimg3.png"
     }
 ]
 
