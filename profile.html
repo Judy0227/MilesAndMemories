@@ -14,51 +14,64 @@
 
 </head>
 <body>
-    <div class="heading">
-    <div><h2>My Profile</h2></div>
-    <div class="image"><img src="/images/ema.jpg" alt="profile picture">
-        <a href="#"><i class="material-symbols-outlined">
-        add_a_photo</i></a>
-    </div>
-    <div class="up"><a href="#">Upgrade</a></div>
-</div>
-
-<div class="name">
-    <p>Emmanuel John </p>
-    
-</div>
-
-<!-- travel quote section -->
-<div class="quote">
-    <p>Travel quote;</p>
-    <textarea name="quote" id="" placeholder="Every place tells a story, and I am writing mine one trip at time"></textarea>
-    
-</div> 
-
-<!-- icons section -->
-<div class="icons">
-    <div class="earth">
-        <i class="fa-solid fa-earth-americas"></i>
-        <p>countries <br> visited</p>
+    <header>
+        <a href="/homescreen.html" class="back-button">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <h2>ALL ENTRIES</h2>
+        <div></div>
+    </header>
+    <div class="container">
+    <div class="profile-header">
+      <img src="https://via.placeholder.com/100" alt="User Avatar" class="avatar" id="userAvatar">
+      <div class="user-info">
+        <h2 id="userName">User Name</h2>
+        <p id="userEmail">user@example.com</p>
+        <p id="joinDate">Joined on Jan 1, 2024</p>
+      </div>
     </div>
 
-    <div class="journal">
-        <p>journal  <br> entries</p>
-        <i class="fa-solid fa-book-open"></i></div>
-</div>
+    <div class="edit-form" id="editForm">
+      <input type="text" id="editName" placeholder="Enter new name">
+      <input type="email" id="editEmail" placeholder="Enter new email">
+      <button class="btn save-btn" onclick="saveProfile()">Save Changes</button>
+    </div>
 
-<!-- export journal section  -->
-<div class="export">
-    <button>Export Journal</button>
-</div>
+    <div class="stats">
+      <div class="stat">
+        <h3 id="entryCount">0</h3>
+        <span>Entries</span>
+      </div>
+      <div class="stat">
+        <h3 id="photoCount">0</h3>
+        <span>Photos</span>
+      </div>
+      <div class="stat">
+        <h3 id="placeCount">0</h3>
+        <span>Countries</span>
+      </div>
+    </div>
 
-<!-- my trips  -->
-<div class="trips">
-    <p>My Trips</p>
-    <h3>Trip to Mum's village</h3>
-    <h3>Lagos Vibes & Street Markets</h3>
-    <h3>Chilling in Calabar</h3>
-</div>
+    <div class="actions">
+      <button class="btn edit-btn" onclick="toggleEditForm()">Edit Profile</button>
+      <button class="btn logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+    <footer>
+    <div class="footer-item">
+            <i class="fa fa-home"></i>
+            <p><a href="/homescreen.html">HOME</a></p>
+        </div>
+        <div class="footer-item">
+            <i class="fa fa-suitcase"></i>
+            <p><a href="/pricing.html">TRIPS</a></p>
+        </div>
+        <div class="footer-item">
+            <i class="fa fa-plus-circle"></i>
+            <p><a href="/newentry.html">NEW ENTRY</a></p>
+        </div>
+    </footer>
     <script src="/scripts/profile.js"></script>
 </body>
 </html>
