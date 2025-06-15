@@ -22,47 +22,34 @@
         <div></div>
     </header>
     <main>
-        <form>
+        <form id="newEntryForm">
             <label for="title">Title
-                <input type="text" id="title" placeholder="SUNSETS AND SOUVENIRS IN SATORINI" class="title">
+                <input type="text" id="title" placeholder="Give your adventure a title..." class="title" required>
             </label>
-            <label for="story">
-                <textarea placeholder="Your Story?" id="story" class="story"></textarea>
+            <label for="date"><i class="fa fa-calendar-o"></i>Date
+                <input type="date" placeholder="" id="date" required>
+            </label>
+             <label for="place"><img src="/images/location icon.png" alt="Location Icon" class="location-icon">Place visited
+                <input type="text" id="place" placeholder="Santorini, Greece" class="place" required>
+            </label>
+            <label for="story">Your Story
+                <textarea placeholder="Share your thoughts, experiences and memories" id="story" class="story" required></textarea>
             </label>
             <div class="input-container">
                 <div class="input-item">
                     <img src="/images/album icon.png" alt="Album Icon" class="album-icon">
                 <p>Photos/Videos</p>
                 </div>
-            <label for="file-input" class="file-label">
-            <input type="file" id="file-input" class="file-input">
+            <div class="upload-box" id="uploadBox">
+            <i class="fa fa-camera"></i>
+            <input type="file" id="images" accept="image/*" style="display: none" multiple/>
+            </div>
                 </label>
             </div>
-            <div class="input-container">
-                <div class="input-item"> 
-                     <img src="/images/location icon.png" alt="Location Icon" class="location-icon">
-                <p>Add Location</p>
-                </div>
+           <div id="imagePreviewContainer" class="preview-container"></div>
             </div>
             <button class="publish-btn">Publish</button>
         </form>
-        <section class="journal-section">
-            <h2>RECENT JOURNAL</h2>
-            <div class="journal-container">
-                <figure>
-                    <img src="/images/tt1.jpg" alt="Journal Image" class="journal-image">
-                    <figcaption>Sailing Through Stillness</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/dubi.jpg" alt="Journal Image" class="journal-image">
-                    <figcaption>Golden Lights of Dubai</figcaption>
-                </figure>
-                <figure>
-                    <img src="/images/mecca.jpg" alt="Journal Image" class="journal-image">
-                    <figcaption>Journey of the Heart</figcaption>
-                </figure>
-            </div>
-        </section>
     </main>
     <footer>
         <div class="footer-item">
@@ -78,6 +65,7 @@
             <p><a href="/newentry.html">NEW ENTRY</a></p>
         </div>
     </footer>
+    <script src="/scripts/uploadjournal.js" type="module"></script>
     <script src="/scripts/newentry.js"></script>
 </body>
 </html>
