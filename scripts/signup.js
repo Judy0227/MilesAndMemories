@@ -51,7 +51,7 @@ password.addEventListener('blur', validatePassword);
 
     if (!re.test(password.value)) {
   const passwordError = document.getElementById('passwordError')
-        passwordError.textContent= 'Password should be at least 12 characters long and include a mix of uppercase and lowercase letters, numbers, and symbols';
+        passwordError.textContent= 'Password should be at least 6 characters long and include a mix of uppercase and lowercase letters, numbers, and symbols';
         password.classList.add('error')
     }  
     if (password.classList.contains('error')) {
