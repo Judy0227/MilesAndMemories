@@ -16,8 +16,9 @@
 <body>
     <div class="form-container">
     <form id="signupForm">
+       <div class="show-msg" id="signup-msg"></div>
       <h2 class="form-title">Sign Up</h2>
-
+     
       <div class="input-group">
         <label for="firstName">Enter First Name</label>
         <input type="text" id="firstName" placeholder="John" required />
@@ -31,6 +32,7 @@
       <div class="input-group">
         <label for="email">Enter Email</label>
         <input type="email" id="email" placeholder="EmmanuelJblog@gmail.com" required />
+        <span id="emailError" class="error-msg"></span>
       </div>
 
       <div class="input-group">
@@ -41,6 +43,7 @@
             <i class="fas fa-eye-slash"></i>
           </span>
         </div>
+        <span id="passwordError" class="error-msg"></span>
       </div>
 
       <div class="input-group">
@@ -49,8 +52,9 @@
           <input type="password" id="confirmPassword" placeholder="********" required/>
           <span class="toggle-password" data-target="confirmPassword">
             <i class="fas fa-eye-slash"></i>
-          </span>
+          </span >
         </div>
+        <span id="confirmError" class="error-msg"></span>
       </div>
 
       <div class="checkbox-group">
@@ -62,23 +66,12 @@
         Already have an Account? <a href="/loginForm.html" class="login-link">Log In</a>
       </div>
 
-      <button type="submit" class="signup-button" id="submit"><a href="/loginForm.html">Sign Up</a></button>
+      <button type="submit" class="signup-button" id="submit">Sign Up</button>
 
       <div class="or-separator"><span>or</span></div>
-
-      <div class="social-buttons">
-        <button type="button" class="social-btn google">
-          <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google icon"/>
-        </button>
-        <button type="button" class="social-btn apple">
-          <img src="https://img.icons8.com/ios-filled/50/000000/mac-os.png" alt="Apple icon"/>
-        </button>
-        <button type="button" class="social-btn facebook">
-          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook icon"/>
-        </button>
-      </div>
     </form>
   </div>
-    <script src="/scripts/signup.js"></script>
+    <script src="/scripts/auth.js" type="module"></script>
+    <script src="/scripts/signup.js" type="module"></script>
 </body>
 </html>
