@@ -18,45 +18,55 @@
         <a href="/homescreen.html" class="back-button">
             <i class="fa fa-arrow-left"></i>
         </a>
-        <h2>ALL ENTRIES</h2>
-        <div></div>
+        <h2>MY PROFILE</h2>
+        
+            <a href="/upgrade.html">Upgrade</a>
+        </div>
     </header>
+    <div class="profile-info">
+            <div class="image-container">
+                <label class="profile-pic" id="file-input">
+                    <img id="profileImg" class="profile-img">
+                    <img src="/images/camera icon.png" alt="Camera Icon" class="camera-icon">
+                    <input type="file" id="file-input">
+                </label>
+            </div>
+        </div>
     <div class="container">
-    <div class="profile-header">
-      <img src="https://via.placeholder.com/100" alt="User Avatar" class="avatar" id="userAvatar">
+        
+        <div>
       <div class="user-info">
-        <h2 id="userName">User Name</h2>
-        <p id="userEmail">user@example.com</p>
-        <p id="joinDate">Joined on Jan 1, 2024</p>
-      </div>
-    </div>
-
-    <div class="edit-form" id="editForm">
-      <input type="text" id="editName" placeholder="Enter new name">
-      <input type="email" id="editEmail" placeholder="Enter new email">
-      <button class="btn save-btn" onclick="saveProfile()">Save Changes</button>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <h3 id="entryCount">0</h3>
-        <span>Entries</span>
-      </div>
-      <div class="stat">
-        <h3 id="photoCount">0</h3>
-        <span>Photos</span>
-      </div>
-      <div class="stat">
-        <h3 id="placeCount">0</h3>
-        <span>Countries</span>
+        <p id="userName"></p>
+        <p id="userEmail"></p>
+        <p id="joinDate"></p>
       </div>
     </div>
 
     <div class="actions">
-      <button class="btn edit-btn" onclick="toggleEditForm()">Edit Profile</button>
-      <button class="btn logout-btn" onclick="logout()">Logout</button>
+      <button class="btn edit-btn" id="editProfile">Edit Profile</button>
+      <button class="btn logout-btn" id="logoutBtn">Logout</button>
     </div>
   </div>
+  <!-- Modal -->
+<div id="editProfileModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Edit Profile</h2>
+    <form id="editProfileForm">
+      <label for="editName">Name:
+      <input type="text" id="editName" required /></label>
+
+      <label for="editEmail">Email:
+      <input type="email" id="editEmail" required /></label>
+
+      <button type="submit" class="btn green">Save Changes</button>
+      <button type="button" class="btn" id="cancelEdit">Cancel</button>
+    </form>
+  </div>
+   <div id="actionMessage" class="hidden">
+  <p id="messageText"></p>
+</div>
+
+</div>
 
     <footer>
     <div class="footer-item">
@@ -64,13 +74,14 @@
             <p><a href="/homescreen.html">HOME</a></p>
         </div>
         <div class="footer-item">
-            <i class="fa fa-suitcase"></i>
-            <p><a href="/pricing.html">TRIPS</a></p>
-        </div>
-        <div class="footer-item">
             <i class="fa fa-plus-circle"></i>
             <p><a href="/newentry.html">NEW ENTRY</a></p>
         </div>
+        <div class="footer-item">
+            <i class="fa fa-check-circle"></i>
+            <p><a href="/upgrade.html">UPGRADE</a></p>
+        </div>
+        
     </footer>
     <script src="/scripts/profile.js"></script>
 </body>
