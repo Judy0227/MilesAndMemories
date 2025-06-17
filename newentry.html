@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <header>
+   <header>
         <a href="/homescreen.html" class="back-button">
             <i class="fa fa-arrow-left"></i>
         </a>
@@ -48,8 +48,14 @@
             </div>
            <div id="imagePreviewContainer" class="preview-container"></div>
             </div>
+            <!-- Loading message (initially hidden) -->
+<div id="uploadingMessage" class="hidden">Uploading your journal entry...</div>
             <button class="publish-btn">Publish</button>
         </form>
+         <div id="actionMessage" class="hidden">
+  <p id="messageText"></p>
+</div>
+
     </main>
     <footer>
         <div class="footer-item">
@@ -57,12 +63,12 @@
             <p><a href="/homescreen.html">HOME</a></p>
         </div>
         <div class="footer-item">
-            <i class="fa fa-suitcase"></i>
-            <p><a href="/pricing.html">TRIPS</a></p>
-        </div>
-        <div class="footer-item">
             <i class="fa fa-plus-circle"></i>
             <p><a href="/newentry.html">NEW ENTRY</a></p>
+        </div>
+        <div class="footer-item">
+            <i class="fa fa-check-circle"></i>
+            <p><a href="/upgrade.html">UPGRADE</a></p>
         </div>
     </footer>
     <script src="/scripts/uploadjournal.js" type="module"></script>
