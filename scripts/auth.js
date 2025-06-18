@@ -102,7 +102,7 @@ localStorage.setItem('loggedInUserId', user.uid);
     }
 })
 }
-const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+/*const forgotPasswordLink = document.getElementById("forgotPasswordLink");
 
 forgotPasswordLink.addEventListener("click", () => {
   const email = prompt("Enter your email to reset password:");
@@ -118,4 +118,4 @@ forgotPasswordLink.addEventListener("click", () => {
 
       });
   }
-});
+});*/
