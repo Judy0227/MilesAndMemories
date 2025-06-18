@@ -1,7 +1,7 @@
 // Import the functions you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
   import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
   import { getStorage } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js";
 
@@ -102,3 +102,20 @@ localStorage.setItem('loggedInUserId', user.uid);
     }
 })
 }
+const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+
+forgotPasswordLink.addEventListener("click", () => {
+  const email = prompt("Enter your email to reset password:");
+
+  if (email) {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        showMessage("Reset link sent! Check your email.", 'success') ;
+      })
+      .catch((error) => {
+        console.error("Password reset error:", error);
+        showMessage(`Error ${error.message}`, error);
+
+      });
+  }
+});
