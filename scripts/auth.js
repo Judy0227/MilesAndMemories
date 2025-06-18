@@ -58,7 +58,7 @@ export function handleSignUp() {
       email: email,
       firstName: firstName,
       lastName: lastName,
-       plan: 'free'
+      plan: 'free'
     }
     showMessage('Account created successfully', 'success')
     const docRef = doc(db, 'users', userId)
