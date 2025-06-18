@@ -40,6 +40,7 @@ function showMessage(message, type) {
 }
 const form = document.getElementById("newEntryForm");
 const uploadMsg = document.getElementById("uploadingMessage");
+const publishBtn = document.getElementById('publishBtn')
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
