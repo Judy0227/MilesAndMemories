@@ -79,7 +79,7 @@ function validateConfirmPassword() {
 }
 import { handleSignUp } from './auth.js';
 
-document.getElementById('signupForm').addEventListener('submit', (e) => {
+document.getElementById('signupBtn').addEventListener('click', (e) => {
   e.preventDefault();
   handleSignUp();
 });
