@@ -102,7 +102,7 @@ form.addEventListener('submit', async (e) => {
         imageUrls.push(data.secure_url);
       } catch (err) {
         console.error("Image upload error:", err);
-        error("Image upload failed. Please try again.", 'error');
+        showMessage("Image upload failed. Please try again.", 'error');
         return;
       }
     }
@@ -110,7 +110,7 @@ form.addEventListener('submit', async (e) => {
 
   // ✅ Step 4: Save journal entry
   try {
-   const docRef = await addDoc(collection(db, "users", user.uid, "journalEntries"), {
+    const docRef = await addDoc(collection(db, "users", user.uid, "journalEntries"), {
   title,
   places,
   story,
