@@ -110,14 +110,15 @@ form.addEventListener('submit', async (e) => {
 
   // ✅ Step 4: Save journal entry
   try {
-    await addDoc(collection(db, "users", user.uid, "journalEntries"), {
-      title,
-      places,
-      story,
-      date,
-      imageUrls,
-      timestamp: new Date()
-    });
+   const docRef = await addDoc(collection(db, "users", user.uid, "journalEntries"), {
+  title,
+  places,
+  story,
+  date,
+  imageUrls,
+  timestamp: new Date()
+});
+    console.log("Saved journal with ID:", docRef.id);
 
     form.reset();
     const preview = document.getElementById('imagePreview');
