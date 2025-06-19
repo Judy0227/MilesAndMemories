@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
  const password = document.getElementById('password');
  const confirmPassword = document.getElementById('confirmPassword')
  const error = document.getElementById('error');
-const form = document.getElementById('signupForm');
 
  email.addEventListener('blur', validateEmail);
  function validateEmail() {
@@ -78,6 +77,7 @@ function validateConfirmPassword() {
       
 }
 import { handleSignUp } from './auth.js';
+const form = document.getElementById('signupForm');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
