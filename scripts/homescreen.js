@@ -140,3 +140,20 @@ console.log(entry)
     }
   }
 })
+const homeProfilePic = document.getElementById('profileImg'); // ⬅️ The <img> in your homescreen
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) return;
+
+  const userRef = doc(db, 'users', user.uid);
+  const userSnap = await getDoc(userRef);
+
+  if (userSnap.exists()) {
+    const data = userSnap.data();
+    if (data.profilePicture) {
+      homeProfilePic.src = data.profilePicture;
+    } else {
+      homeProfilePic.src = "/default-profile.png"; // fallback if none
+    }
+  }
+});
