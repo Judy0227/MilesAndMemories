@@ -17,7 +17,11 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
+a {
+    color: inherit;
+    align-self: flex-end;
+    text-decoration: none;
+}
 .upgrade-container {
   text-align: center;
 }
