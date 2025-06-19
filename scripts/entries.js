@@ -22,7 +22,7 @@ const recentContainer = document.getElementById('entryContainer');
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     const entriesRef = collection(db, "users", user.uid, "journalEntries");
-    const recentQuery = query(entriesRef, orderBy("date", "desc"), limit(2));
+    const recentQuery = query(entriesRef, orderBy("date", "desc"));
     const snapshot = await getDocs(recentQuery);
 
     if (!snapshot.empty) {
