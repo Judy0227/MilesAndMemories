@@ -1,7 +1,7 @@
 // Import the functions you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
   import { getAuth, onAuthStateChanged, updateEmail, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-  import { getFirestore, getDoc, getDocs, doc, collection, query, orderBy, limit, updateDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+  import { getFirestore, getDoc, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAsAaV_uiplyie0Ube0tZHJyzBZ-7fkR70",
@@ -121,4 +121,54 @@ logoutBtn.addEventListener("click", () => {
       console.error("Logout error:", error);
       showMessage("An error occurred while logging out.", 'error');
     });
+});
+const fileInput = document.getElementById('file-input');
+const profilePic = document.getElementById('profileImg');
+const cloudName = "dlyzyzguc";
+const uploadPreset = "journalEntries";
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) return;
+
+  const userRef = doc(db, 'users', user.uid);
+  const userSnap = await getDoc(userRef);
+
+  // ✅ Load existing profile picture if it exists
+  if (userSnap.exists()) {
+    const data = userSnap.data();
+    if (data.profilePicture) {
+      profilePic.src = data.profilePicture;
+    }
+  }
+
+  // ✅ Handle profile picture upload
+  fileInput.addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', uploadPreset); // 🔁 Typo fixed (was missing underscore)
+
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+      const imageUrl = data.secure_url;
+
+      await updateDoc(userRef, {
+        profilePicture: imageUrl
+      });
+
+      profilePic.src = imageUrl;
+      showMessage('Profile picture updated successfully!', 'success');
+
+    } catch (err) {
+      console.error('Image upload failed:', err);
+      showMessage('Failed to update profile picture!', 'error');
+    }
+  });
 });
