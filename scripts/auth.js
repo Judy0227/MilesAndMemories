@@ -102,20 +102,3 @@ localStorage.setItem('loggedInUserId', user.uid);
     }
 })
 }
-const forgotPasswordLink = document.getElementById("forgotPasswordLink");
-
-forgotPasswordLink.addEventListener("click", () => {
-  const email = prompt("Enter your email to reset password:");
-
-  if (email) {
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        showMessage("Reset link sent! Check your email.", 'success') ;
-      })
-      .catch((error) => {
-        console.error("Password reset error:", error);
-        showMessage(`Error ${error.message}`, error);
-
-      });
-  }
-});
