@@ -13,17 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <a href="/homescreen.html" class="back-button">← Back to Journal Entries</a>
-        <div id="entriesContainer">
-            <h1 id="entryTitle"></h1>
-            <div class="meta" id="entryMeta"></div>
-            <div class="story" id="entryStory"></div>
-            <div class="image-grid" id="entryImages">
-                <!-- Images will be inserted here -->
-            </div>
-        </div>
-    </div>
+    <a href="/entries.html" class="back-button">
+            <i class="fa fa-arrow-left"></i>Back to Journal Entries
+        </a>
+    <input id="title" placeholder="Title" type="text" />
+<input id="place" placeholder="Place" type="text"/>
+<input id="date" type="date" />
+<textarea id="story"></textarea>
+<div id="entryImages"></div>
+        <div id="uploadBox" class="upload-box">Click to Upload Images</div>
+<input type="file" id="images" multiple hidden />
+<div id="imagePreviewContainer" class="image-preview-container"></div>
+
+
+<button id="updateBtn">Update</button>
+<button id="deleteBtn">Delete</button>
+<div id="actionMessage" class="hidden">
+  <p id="messageText"></p>
+</div>
+
     <script src="/scripts/eachEntry.js" type="module"></script>
 </body>
 </html>
