@@ -116,7 +116,7 @@ onAuthStateChanged(auth, async (user) => {
           window.location.href = `/eachEntry.html?id=${doc.id}`;
         };
 console.log(entry)
-       article.innerHTML = `
+      article.innerHTML = `
   <div class="entry-item">
     <div class="img-container">
       <img src="${entry.imageUrls?.[0] || '/images/placeholder.jpg'}" id="image" class="image">
@@ -131,7 +131,7 @@ console.log(entry)
         ${entry.story?.slice(0, 100)}...
       </p>
     </div>
-  </div>;
+  </div>`;
         recentContainer.appendChild(article);
       });
     } else {
