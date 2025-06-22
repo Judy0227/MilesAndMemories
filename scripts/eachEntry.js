@@ -132,5 +132,6 @@ onAuthStateChanged(auth, async (user) => {
 
     await updateDoc(entryRef, updated);
     showMessage("Entry updated!", 'success');
+     window.location.href = "/entries.html";
   });
 });
