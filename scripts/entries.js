@@ -34,22 +34,23 @@ onAuthStateChanged(auth, async (user) => {
         };
 console.log(entry)
         article.innerHTML = `
-          <div class="entry-item">
-                <div class="img-container">
-                    <img src="${entry.imageUrls}" id="image" class="image">
-                </div>
-                <div>
-                    <h3 id="title">${entry.title}</h3>
-                    <div class="date-place">
-                        <span id="place" class="place"><i class="fa fa-map-marker" aria-hidden="true"></i>${entry.places}</span>
-                        <span id="date" class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>${entry.date}</span>
-                    </div>
-                    <p class="story" id="story">
-                        ${entry.story?.slice(0, 100)}...
-                    </p>
-                </div>
-            </div>
-        `;
+  <div class="entry-item">
+    <div class="img-container">
+      <img src="${entry.imageUrls?.[0] || '/images/placeholder.jpg'}" id="image" class="image">
+    </div>
+    <div>
+      <h3 id="title">${entry.title}</h3>
+      <div class="date-place">
+        <span id="place" class="place"><i class="fa fa-map-marker" aria-hidden="true"></i>${entry.places}</span>
+        <span id="date" class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i>${entry.date}</span>
+      </div>
+      <p class="story" id="story">
+        ${entry.story?.slice(0, 100)}...
+      </p>
+    </div>
+  </div>
+`;
+
         recentContainer.appendChild(article);
       });
     } else {
