@@ -300,4 +300,8 @@
      font-size: 0.85em;
    }
  }
- 
+ .terms {
+  color: var(--green-link);
+   text-decoration: none;
+   font-weight: 600;
+ }
